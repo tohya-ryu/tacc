@@ -1,0 +1,30 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    #RewriteBase /jlearn
+
+    #RewriteCond %{REQUEST_URI} ^/_system.*
+    #RewriteRule ^(.*)$ /index.php?/$1 [L]
+
+    #RewriteCond %{REQUEST_URI} ^/application.*
+    #RewriteRule ^(.*)$ /index.php?/$1 [L]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    #RewriteCond %{REQUEST_URI} ^/system.*
+    #RewriteCond %{REQUEST_URI} ^/app.*
+    RewriteCond %{REQUEST_URI} [^/public.*]
+    RewriteRule ^(.*)$ index.php?/$1 [L]
+    #RewriteRule ^(.*)$ index.php/$1?%{QUERY_STRING} [L]
+</IfModule>
+
+    #RewriteEngine On
+    # Redirect /index.php to / (optional, but recommended I guess)
+    #RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*index\.php
+    #RewriteRule ^index.php/?(.*)$ $1 [R=301,L]
+
+    # Run everything else but real files through index.php
+    #RewriteCond %{REQUEST_FILENAME} !-d
+    #RewriteCond %{REQUEST_FILENAME} !-f
+    #RewriteCond %{REQUEST_URI} ^/_system.*
+    #RewriteCond %{REQUEST_URI} ^/application.*
+    #RewriteRule ^(.*)$ index.php/$1?%{QUERY_STRING} [L]
