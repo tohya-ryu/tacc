@@ -1,8 +1,6 @@
 <?php
 
 class FrameworkRoute {
-    use FrameworkMagicGet;
-    private static $magic_get_attr = array('tokens');
 
     private static $collection = array();
     public static $default_target = null;

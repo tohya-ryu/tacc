@@ -1,11 +1,6 @@
 <?php
 
 class FrameworkTemplate {
-    use FrameworkMagicGet;
-    private static $magic_get_attr = array(
-        'view', 'data'
-    );
-
     private $view;
     private $data;
     private $path;

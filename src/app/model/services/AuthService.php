@@ -1,11 +1,6 @@
 <?php
 
 class AuthService implements FrameworkServiceBase {
-    use FrameworkMagicGet;
-    private static $magic_get_attr = array(
-         'controller', 'csrf_mod'
-    );
-
     private $controller;
     private $session;
     private $user;

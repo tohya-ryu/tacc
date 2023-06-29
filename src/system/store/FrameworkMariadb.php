@@ -1,10 +1,6 @@
 <?php
 
 class FrameworkMariadb implements FrameworkStore {
-    use FrameworkMagicGet;
-    private static $magic_get_attr = array(
-        'type', 'name', 'charset', 'engine', 'collate'
-    );
 
     private $name;
     private $key;

@@ -1,11 +1,6 @@
 <?php
 
 class FrameworkViewBase {
-    use FrameworkMagicGet;
-    private static $magic_get_attr = array(
-        'controller'
-    );
-
     private $controller;
     private $render_stack;
     private $render_stack_pos;

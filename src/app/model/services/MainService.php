@@ -1,11 +1,6 @@
 <?php
 
 class MainService implements FrameworkServiceBase {
-    use FrameworkMagicGet;
-    private static $magic_get_attr = array(
-         'controller'
-    );
-
     private $controller;
     private $validator;
     private $db;

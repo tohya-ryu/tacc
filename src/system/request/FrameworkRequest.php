@@ -1,12 +1,7 @@
 <?php
 
 class FrameworkRequest {
-    use FrameworkMagicGet;
     use FrameworkSingleton;
-    private static $magic_get_attr = array(
-        'useragent', 'method', 'address', 'https_f', 'acclang', 'uri',
-        'uri_elements', 'param', 'cookies'
-    );
 
     private $useragent;
     private $method;

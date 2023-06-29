@@ -2,11 +2,6 @@
 
 class FrameworkLanguage {
     use FrameworkSingleton;
-    use FrameworkMagicGet;
-    private static $magic_get_attr = array(
-        'tag'
-    );
-
     private $tag;
 
     private final function __construct()

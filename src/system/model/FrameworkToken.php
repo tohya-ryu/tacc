@@ -1,8 +1,6 @@
 <?php
 
 class FrameworkToken {
-    use FrameworkMagicGet;
-    private static $magic_get_attr = array('code');
 
     const BYTES = 32;
     private $code;

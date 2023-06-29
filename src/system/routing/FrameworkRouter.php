@@ -1,8 +1,6 @@
 <?php
 
 class FrameworkRouter {
-    use FrameworkMagicGet;
-    private static $magic_get_attr = array('params');
 
     private $request;
     private $routes;

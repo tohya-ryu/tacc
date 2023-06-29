@@ -1,9 +1,6 @@
 <?php
 
 class SessionPractice extends FrameworkSessionModule {
-    use FrameworkMagicGet;
-    private static $magic_get_attr = array('set');
-
     protected $set;
 
     public function __construct()

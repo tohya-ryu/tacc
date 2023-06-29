@@ -1,8 +1,6 @@
 <?php
 
 class FrameworkRequestParam {
-    use FrameworkMagicGet;
-    private static $magic_get_attr = array('key', 'value');
 
     private $key;
     private $value;
