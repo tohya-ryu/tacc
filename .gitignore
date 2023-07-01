@@ -1,9 +1,7 @@
 # app
-build.dev.sh
-/src/scripts/import*
+env.json
+dev/
 .sass-cache/
-/src/assets/style.css.map
-/src/assets/style.css
 
 # Swap
 [._]*.s[a-v][a-z]
