@@ -1,4 +1,5 @@
 # app
+config/env.php
 config/env.development.php
 config/env.production.php
 dev/
