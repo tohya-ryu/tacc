@@ -1,5 +1,6 @@
 # app
-env.json
+config/env.development.php
+config/env.production.php
 dev/
 .sass-cache/
 
