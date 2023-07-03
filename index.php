@@ -1,3 +1,3 @@
 <?php
 
-require 'system/_main.php'
+require 'sys/_main.php';
