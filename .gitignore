@@ -1,7 +1,7 @@
 # app
-config/env.php
-config/env.development.php
-config/env.production.php
+src/config/env.php
+src/config/env.development.php
+src/config/env.production.php
 dev/
 .sass-cache/
 
