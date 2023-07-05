@@ -7,10 +7,10 @@ Enum Env: int
 }
 
 Enum Method: string
+{
     case GET    = 'get';
     case DELETE = 'delete';
-    case PATCH  = 'patch'
+    case PATCH  = 'patch';
     case POST   = 'post';
     case PUT    = 'put';
 }
-
