@@ -8,14 +8,18 @@ use framework5\init\request as init_request;
 $GLOBALS['services'] = [];
 $GLOBALS['data']     = [];
 $GLOBALS['db']       = [];
+$GLOBALS['config']   = [];
 
 # load globally required files
 require 'sys/headers/enum.php';
 require 'sys/functions/globals.php';
 require 'sys/headers/request.php';
+require 'sys/init/config.php';
 require 'sys/init/request.php';
 
 # setup config
+init_config\read_config('src/config/app.php');
+init_config\read_env('src/config/env.php');
 
 # setup request
 $request = new request();

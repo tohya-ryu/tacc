@@ -2,7 +2,7 @@
 
 # Application Configuration
 #
-$config['version'] = '1.0.0';
+$config['app_version'] = '0.0.0';
 $config['app_name'] = 'tacc';
 $config['available_languages'] = [
     'en'    => 'en',
