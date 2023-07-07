@@ -2,7 +2,7 @@
 src/config/env.php
 src/config/env.development.php
 src/config/env.production.php
-dev/
+build/*
 .sass-cache/
 
 # Swap
