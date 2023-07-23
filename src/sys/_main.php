@@ -3,6 +3,7 @@
 # strip namespaces
 use framework5\request as request;
 use framework5\init\request as init_request;
+use framework5\init\config as init_config;
 
 # prepare $GLOBALS
 $GLOBALS['services'] = [];
@@ -35,7 +36,7 @@ $request = init_request\set_method($request);
 // match route
 // get match and fetch corresponding interface
 
-// includes root-dir and get parameters ?x=z
+// includes root-dir (if placed in subdir of docroot) and get parameters ?x=z
 var_dump($_SERVER['REQUEST_URI']);
 
 // only includes sections relevant for routing

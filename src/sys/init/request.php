@@ -104,16 +104,16 @@ function set_uri(request $request): request
 }
 
 // cookies
-function set_ip(request $request): request
+function set_cookies(request $request): request
 {
 }
 
 // session (after routing)
-function set_ip(request $request): request
+function start_session(request $request): request
 {
 }
 
 // parameters (after routing)
-function set_ip(request $request): request
+function prepare_input(request $request): request
 {
 }
