@@ -2,6 +2,7 @@
 
 # strip namespaces
 use framework5\request as request;
+use framework5\router as router;
 use framework5\init\request as init_request;
 use framework5\init\config as init_config;
 
@@ -15,6 +16,9 @@ $GLOBALS['config']   = [];
 require 'sys/headers/enum.php';
 require 'sys/functions/globals.php';
 require 'sys/headers/request.php';
+require 'sys/headers/router.php';
+require 'sys/headers/route.php';
+require 'sys/headers/route_token.php';
 require 'sys/init/config.php';
 require 'sys/init/request.php';
 
@@ -32,6 +36,7 @@ $request = init_request\set_method($request);
 
 # setup routing
 // init router
+$router = new router();
 // read routes
 // match route
 // get match and fetch corresponding interface
