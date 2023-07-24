@@ -7,11 +7,17 @@ class route {
     // record of data for the current route
     // and tokens for each route in the set of all routes
 
-    public array $tokens;
+    public string $method;
+    public string $uri;
+    public string $target;
+    public ?array  $tokens;
 
     public function __construct()
     {
-        $this->tokens = [];
+        $this->method = "";
+        $this->uri    = "";
+        $this->target = "";
+        $this->tokens = null;
     }
 
 

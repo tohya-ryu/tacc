@@ -9,6 +9,7 @@ class router {
     public array   $params;
     public ?string $match_interface;
     public ?string $match_action;
+    public ?string $fallback;
 
     public function __construct()
     {
@@ -17,6 +18,7 @@ class router {
         $this->params          = [];
         $this->match_interface = null;
         $this->match_action    = null;
+        $this->fallback        = null;
     }
     
 }

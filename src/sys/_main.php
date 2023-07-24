@@ -6,6 +6,8 @@ use framework5\router as router;
 use framework5\init\request as init_request;
 use framework5\init\config as init_config;
 
+use framework5\init\routing as init_routing;
+
 # prepare $GLOBALS
 $GLOBALS['services'] = [];
 $GLOBALS['data']     = [];
@@ -21,10 +23,11 @@ require 'sys/headers/route.php';
 require 'sys/headers/route_token.php';
 require 'sys/init/config.php';
 require 'sys/init/request.php';
+require 'sys/init/routing.php';
 
 # setup config
-init_config\read_config('src/config/app.php');
-init_config\read_env('src/config/env.php');
+init_config\read_config('app/config/app.php');
+init_config\read_env('app/config/env.php');
 
 # setup request
 $request = new request();
@@ -35,20 +38,19 @@ $request = init_request\set_transport($request);
 $request = init_request\set_method($request);
 
 # setup routing
-// init router
 $router = new router();
-// read routes
-// match route
-// get match and fetch corresponding interface
+init_routing\read_routes($router);
+//var_dump($router->routes);
+#$GLOBALS['route'] = init_routing\get_match($router);
+init_routing\attempt_match($router);
+
+require "app/interfaces/".$router->match_interface."/".
+    $router->match_action.".php";
 
 // includes root-dir (if placed in subdir of docroot) and get parameters ?x=z
-var_dump($_SERVER['REQUEST_URI']);
+//var_dump($_SERVER['REQUEST_URI']);
 
 // only includes sections relevant for routing
-var_dump($_SERVER['QUERY_STRING']);
+//var_dump($_SERVER['QUERY_STRING']);
 
-
-var_dump(request::test());
-
-
-var_dump(request());
+//var_dump(request());

@@ -5,41 +5,42 @@ use framework5\request as request;
 
 function set_useragent(request $request): request
 {
-if (isset($_SERVER['HTTP_USER_AGENT']))
-    $request->useragent = $_SERVER['HTTP_USER_AGENT'];
-return $request;
+    if (isset($_SERVER['HTTP_USER_AGENT']))
+        $request->useragent = $_SERVER['HTTP_USER_AGENT'];
+    return $request;
 }
 
 function set_ip(request $request): request
 {
-$request->ip = $_SERVER['REMOTE_ADDR'];
-return $request;
+    $request->ip = $_SERVER['REMOTE_ADDR'];
+    return $request;
 }
 
 function set_transport(request $request): request
 {
-if (isset($_SERVER['HTTPS'])) {
-    $request->transport = 'https://';
-    $request->is_secure = true;
-} else {
-    $request->transport = 'http://';
-    $request->is_secure = false;
-}
-return $request;
+    if (isset($_SERVER['HTTPS'])) {
+        $request->transport = 'https://';
+        $request->is_secure = true;
+    } else {
+        $request->transport = 'http://';
+        $request->is_secure = false;
+    }
+    return $request;
 }
 
 function set_method(request $request): request
 {
-$request->method = $_SERVER['REQUEST_METHOD'];
-if (isset($_POST['_method'])) {
-    if (Enum.IsDefined(typeof(Method), $_POST['_method'])) {
-        $request->method = $_POST['_method'];
-    } else {
-        die('Invalid method from $_POST: ' . htmlspecialchars(
-            $_POST['method'], ENT_QUOTES));
+    $request->method = $_SERVER['REQUEST_METHOD'];
+    if (isset($_POST['_method'])) {
+        if (Enum.IsDefined(typeof(Method), $_POST['_method'])) {
+            $request->method = $_POST['_method'];
+        } else {
+            die('Invalid method from $_POST: ' . htmlspecialchars(
+                $_POST['method'], ENT_QUOTES));
+        }
     }
-}
-return $request;
+    $request->method = strtoupper($request->method);
+    return $request;
 }
 
 function set_languages(request $request): request

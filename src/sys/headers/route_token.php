@@ -11,9 +11,9 @@ class route_token {
     public bool    $is_wildcard;
     public array   $next;
 
-    public function __construct($name = null)
+    public function __construct()
     {
-        $this->name            = $name;
+        $this->name            = null;
         $this->is_wildcard     = false;
         $this->match_condition = null;
         $this->next            = [];

@@ -37,6 +37,13 @@ function env(string $key)
     return $GLOBALS['env'][$key];
 }
 
+/* TODO requires route to be embedded in route token tree
+function route(): framework5\route
+{
+    return $GLOBALS['route'];
+}
+ */
+
 function db(string $key)
 {
     if (isset($GLOBALS['db'][$key])) {
